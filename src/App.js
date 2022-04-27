@@ -14,8 +14,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/admin/add' element={<AddFood />} />
         <Route path='/admin/foods' element={<FoodList />} />
+        <Route path='/admin/update/:id' element={<UpdateFood />} />
       </Routes>
-      <UpdateFood />
     </div>
   );
 }
