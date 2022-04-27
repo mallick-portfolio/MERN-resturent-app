@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import axios, {Axios} from 'axios'
+import axios from "axios";
 const useFoods = () => {
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:5000/foods')
-      .then((res) => res.json())
-      .then((data) => setFoods(data));
+    axios.get("http://localhost:5000/foods").then((res) => {
+      setFoods(res.data);
+    });
   }, []);
-  return [foods, setFoods]
-}
-export default useFoods
+  return [foods, setFoods];
+};
+export default useFoods;

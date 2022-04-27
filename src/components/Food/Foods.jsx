@@ -1,17 +1,9 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
+import useFoods from "../../hooks/useFoods";
 import Food from "./Food";
 
 const Foods = () => {
-  const [foods, setFoods] = useState([]);
-  useEffect(() => {
-    axios.get('http://localhost:5000/foods')
-    .then(res => {
-      setFoods(res.data)
-    })
-    
-  }, []);
+  const [foods] = useFoods()
   return (
     <Container>
       <Row xs={1} md={2} lg={3} className="g-4">
